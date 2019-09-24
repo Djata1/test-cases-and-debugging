@@ -1,9 +1,9 @@
 let verifyEquals = require('./verify-equals.js');
 
 // we need 5 test cases.
-let inputs = [];
+let inputs = ['hello world', 'bye bye student', 'yoyo is a goog chile', 'i am a student now', 'coucou every body'];
 
-let outputs = [];
+let outputs = ['Hello World', 'Bye Bye Student', 'Yoyo Is A Goog Chile', 'I Am A Student Now', 'Coucou Every Body'];
 
 /*
 Make this function return the input string, capitalized. You must use a for loop. For example:
@@ -15,7 +15,17 @@ HINT:
    - Use a for loop to capitalize the words one by one
    - Use the toUpperCase string method
 */
-function f(str) {}
+function f(str) {
+  const arr= str.split(' ');
+  let taill=arr.length;
+  let uppercases=[];
+  for(let i=0; i<taill; i++)
+  {
+    const uppercase=arr[i].charAt(0).toUpperCase()+arr[i].slice(1).toLowerCase();
+  uppercases.push(uppercase);
+  }
+return uppercases.join(' ');
+}
 
 //This function runs a test. You do not need to change any code under here
 function runTest(i) {

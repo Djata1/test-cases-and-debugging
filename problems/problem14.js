@@ -1,9 +1,11 @@
 let verifyEquals = require('./verify-equals.js');
 
 // we need 5 test cases.
-let inputs = [];
+let inputs = ['All computer programs written in every programming language[1] follow the same basic structure. Programs are made of statements, statements contain expressions and '];
 
-let outputs = [];
+let outputs = [All computer programs written in every program
+ming language[1] follow the same basic structure. Pr
+];
 
 /*
 Make this function return the input string wrapped to 40 characters per line. 
@@ -26,7 +28,19 @@ Lorem ipsumos dolor sit amet consectetur
 
 even though there is a space before the a in adipisicing
 */
-function f(str) {}
+function f(str) {
+charac=str.split('');
+for(let i=0; i < charac.length; i++)
+{let ch='';
+  if(i%40===0)
+  {
+ch+'/n';
+  }
+  ch+charac[i];
+}
+return ch;
+
+}
 
 //This function runs a test. You do not need to change any code under here
 function runTest(i) {

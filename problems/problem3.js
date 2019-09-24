@@ -1,9 +1,9 @@
 let verifyEquals = require('./verify-equals.js');
 
 // we need 7 test cases. I've provided 2.
-let inputs = [[2, 4], [-3, 3]];
+let inputs = [[2, 4], [-3, 3], [6, 2], [8, 5], [4, 9], [9, 5], [1, 3]];
 
-let outputs = [6, 0];
+let outputs = [6, 0, 8, 13, 13, 14, 4];
 
 /*
   This function expects an array of 2 numbers as input (e.g. [1,2])
@@ -11,7 +11,14 @@ let outputs = [6, 0];
   If anything other than an array with 2 numbers is passed, return undefined.
   You can use the typeof function to check the type of each element (e.g. typeof 3 returns 'number')
 */
-function f(input) {}
+function f(input) {
+  
+ if(input.length !== 2||input.some((elem)=>typeof elem !=='number'))
+ {
+return undefined
+ }
+ return (input.reduce((a,b)=>{return a+b}));
+}
 
 //This function runs a test. You do not need to change any code under here
 function runTest(i) {

@@ -1,12 +1,18 @@
 let verifyEquals = require('./verify-equals.js');
 
 // we need 5 test cases.
-let inputs = [];
+let inputs = ['maximun','gogol','google','gogoooo','hhhjjjj'];
 
-let outputs = [];
+let outputs = ['n','l','e','o','j'];
 
 // Make this function return the last character of the string that is passed to it. If the string does not have a last character, return undefined
-function f(str) {}
+function f(str) {
+  if(str.slice(-1)==='')
+  {return undefined}
+  return str.slice(-1);
+  
+
+}
 
 //This function runs a test. You do not need to change any code under here
 function runTest(i) {

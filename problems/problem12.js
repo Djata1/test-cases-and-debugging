@@ -22,8 +22,31 @@ HINTS:
     - Once to get the unique elements in the first array
     - A second time to get the unique elements in the second array
 */
-function f(input) {}
 
+function g(array1,array2) {
+  tabunique=[];
+  for(let i=0; i<array1.length; i++)
+  {
+    let elem1=array1[i];
+    let uniqu=true
+    for(let j=0; j<array2.length; i++)
+    {
+      elem2=array2[i];
+      if(elem1===elem2)
+    {
+      uniqu=false;
+      break;
+    }
+    if (uniqu) tabunique.push(elem1);
+    }
+  }
+}
+
+function f(input) {
+  const arr1 = input[0];
+  const arr2 = input[1];
+  return g(arr1, arr2).concat(g(arr2, arr1));
+}
 //This function runs a test. You do not need to change any code under here
 function runTest(i) {
   if (i >= inputs.length) throw new Error('You do not have enough test cases');
