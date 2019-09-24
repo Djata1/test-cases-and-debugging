@@ -34,7 +34,7 @@ for(let i=0; i < charac.length; i++)
 {let ch='';
   if(i%40===0)
   {
-ch+'/n';
+ch=ch+'/n';
   }
   ch+charac[i];
 }
