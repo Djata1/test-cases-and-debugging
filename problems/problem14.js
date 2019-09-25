@@ -1,10 +1,12 @@
-let verifyEquals = require('./verify-equals.js');
+let verifyEquals = require("./verify-equals.js");
 
 // we need 5 test cases.
-let inputs = ['All computer programs written in every programming language[1] follow the same basic structure. Programs are made of statements, statements contain expressions and '];
+let inputs = [
+  "Lorem ipsumos dolor sit amet consectetur adipisicing elit. Magni quisquam"
+];
 
-let outputs = [All computer programs written in every program
-ming language[1] follow the same basic structure. Pr
+let outputs = [
+  "Lorem ipsumos dolor sit amet consectetur\nadipisicing elit. Magni quisquam"
 ];
 
 /*
@@ -29,22 +31,23 @@ Lorem ipsumos dolor sit amet consectetur
 even though there is a space before the a in adipisicing
 */
 function f(str) {
-charac=str.split('');
-for(let i=0; i < charac.length; i++)
-{let ch='';
-  if(i%40===0)
-  {
-ch=ch+'/n';
+  let charac = str.split("");
+  let ch = "";
+  for (let i = 0; i < charac.length; i++) {
+    if (i % 40 === 0) {
+      ch = ch + "\n";
+      if (charac[i] !== " ") {
+        ch += charac[i];
+      }
+    }
+    ch = ch + charac[i];
   }
-  ch+charac[i];
-}
-return ch;
-
+  return ch;
 }
 
 //This function runs a test. You do not need to change any code under here
 function runTest(i) {
-  if (i >= inputs.length) throw new Error('You do not have enough test cases');
+  if (i >= inputs.length) throw new Error("You do not have enough test cases");
   let expected = outputs[i];
   let actual = f(inputs[i]);
   verifyEquals(expected, actual);
@@ -56,4 +59,4 @@ runTest(2);
 runTest(3);
 runTest(4);
 
-console.log('All tests passed for ' + __filename);
+console.log("All tests passed for " + __filename);
